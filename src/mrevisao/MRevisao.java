@@ -5,6 +5,8 @@
  */
 package mrevisao;
 
+import java.util.Scanner;
+
 /**
  *
  * @author jairb
@@ -16,7 +18,58 @@ public class MRevisao {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Scanner ler = new Scanner(System.in);//usar no console
+        boolean verifica;//var booleana | true or false | 0 or 1
+        int num1;//var do tipo inteiro 11 posições
+        short num2;//var = smalint inteiro pequeno 4 posições
+        long num3;//var = bigint inteiro grande | contador do youtube 
+        double num4;// var = decimal, numeric com casas decimais
+        float num5;// var = com casas decimais é menor que o double
+        byte b;//num inteiro valor maximo 127
+        String texto;//aceita tudo em formato texto
+        String textoCurto;
+        char sexo;
+        
         System.out.println("Revisão Manhã");
+        
+        System.out.print("Informe um numero inteiro: ");
+        num1 = ler.nextInt();
+        System.out.print("Informe um num. inteiro até 127: ");
+        b = ler.nextByte();
+        System.out.print("Informe um numero inteiro médio: ");
+        num2 = ler.nextShort();
+        System.out.print("Informe um num. inteiro grande: ");
+        num3 = ler.nextLong();
+        System.out.print("Informe um numero com decimal: ");
+        num4 = ler.nextDouble();
+        System.out.print("Informe um num. decimal pequeno: ");
+        num5 = ler.nextFloat();
+        System.out.print("Informe seu nome completo: ");
+        ler.nextLine();
+        texto = ler.nextLine();
+        texto = texto.toUpperCase();
+        System.out.print("Informe o primeiro nome de sua mãe: ");
+        textoCurto = ler.next();
+        textoCurto = textoCurto.toUpperCase();
+        System.out.print("Informe seu sexo: ");
+        sexo = ler.next().charAt(0);
+        
+        System.out.println("--- Impressão ---");
+        System.out.println("inteiro: " + num1);
+        System.out.println("byte: " + b);
+        System.out.println("short: " + num2);
+        System.out.println("long: " + num3);
+        System.out.println("double: " + num4);
+        System.out.println("float: " + num5);
+        System.out.println("Seu nome é: " + texto);
+        System.out.println("Nome de sua mãe é: " + textoCurto);
+        System.out.println("Seu sexo é: " + sexo);
+        verifica = num1>=num2;
+        if (verifica){
+            System.out.println("num1 é maior ou igual que num2.");
+        }else{
+            System.out.println("num2 é maior que num1.");
+        }
     }
-    
+
 }

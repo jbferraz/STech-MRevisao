@@ -5,6 +5,7 @@
  */
 package mrevisao;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -29,10 +30,14 @@ public class MRevisao {
         String texto;//aceita tudo em formato texto
         String textoCurto;
         char sexo;
-        
-        
+        int vet[] = {1, 2, 3};  //as posições começam em ZERO 0, {1,2,3} são os valores      
+        ArrayList<Integer> valores = new ArrayList<>();
+        valores.add(1);
+        valores.add(2);
+        valores.add(3);
+
         System.out.println("Revisão Manhã");
-        
+
         System.out.print("Informe um numero inteiro: ");
         num1 = ler.nextInt();
         System.out.print("Informe um num. inteiro até 127: ");
@@ -54,7 +59,6 @@ public class MRevisao {
         textoCurto = textoCurto.toUpperCase();
         System.out.print("Informe seu sexo: ");
         sexo = ler.next().charAt(0);
-        
         System.out.println("--- Impressão ---");
         System.out.println("inteiro: " + num1);
         System.out.println("byte: " + b);
@@ -65,12 +69,27 @@ public class MRevisao {
         System.out.println("Seu nome é: " + texto);
         System.out.println("Nome de sua mãe é: " + textoCurto);
         System.out.println("Seu sexo é: " + sexo);
-        verifica = num1>=num2;
-        if (verifica){
+        verifica = num1 >= num2;
+        if (verifica) {
             System.out.println("num1 é maior ou igual que num2.");
-        }else{
+        } else {
             System.out.println("num2 é maior que num1.");
         }
+        System.out.println("Vetor");
+        for (int i = 0; i < vet.length; i++) {
+            System.out.println("Posição: " + i + " | valor: " + vet[i]);
+        }
+
+        System.out.println("ArrayList");
+        for (int i = 0; i < valores.size(); i++) {
+            System.out.println("Posição: " + i + " | Valor: " + valores.get(i));
+        }
+
+        System.out.println("ArrayList-Impressão 2");
+        valores.forEach((i) -> System.out.println("Valor: " + i));
+
+        System.out.println("ArrayList-Impressão 3");
+        System.out.println("Valores: " + valores.toString());
     }
 
 }

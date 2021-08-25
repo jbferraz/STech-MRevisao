@@ -33,8 +33,8 @@ public class IMC {
          */
         Scanner ler = new Scanner(System.in);
         float peso, altura, imc;
-        String nome;
-
+        String nome, saida="n";
+        
         System.out.println("-- Calculadora IMC --");
         System.out.println("");
         System.out.println("Informe seu nome: ");

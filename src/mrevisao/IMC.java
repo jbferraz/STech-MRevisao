@@ -13,6 +13,12 @@ import java.util.Scanner;
  */
 public class IMC {
 
+    public static String leTexto() {
+        //Matheus Gre
+        Scanner teclado = new Scanner(System.in);
+        return teclado.nextLine();
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -33,31 +39,42 @@ public class IMC {
          */
         Scanner ler = new Scanner(System.in);
         float peso, altura, imc;
-        String nome, saida="n";
-        
-        System.out.println("-- Calculadora IMC --");
-        System.out.println("");
-        System.out.println("Informe seu nome: ");
-        nome = ler.nextLine();
-        nome = nome.toUpperCase();
-        System.out.print("Informe seu peso: ");
-        peso = ler.nextFloat();
-        System.out.print("Informe sua altura: ");
-        altura = ler.nextFloat();
-        imc = peso / (altura * altura);
+        String nome, saida = "s";
+        boolean s = true;
 
-        System.out.println("");
-        System.out.println("Resultado com If");
-        if (imc < 18.5) {
-            System.out.printf(nome + " seu IMC é: %.2f, e define Magreza.", imc);
-        } else if (imc <= 24.9) {
-            System.out.printf(nome + " seu IMC é: %.2f, e define Normal.", imc);
-        } else if (imc <= 30) {
-            System.out.printf(nome + " seu IMC é: %.2f, e define Sobrepeso.", imc);
-        } else {
-            System.out.printf(nome + " seu IMC é: %2.f, e define Obesidade.", imc);
-        }
+        while (s) {
 
+            System.out.println("-- Calculadora IMC --");
+            System.out.println("");
+            System.out.print("Informe seu nome: ");
+            nome = leTexto();
+            nome = nome.toUpperCase();
+            System.out.print("Informe seu peso: ");
+            peso = ler.nextFloat();
+            System.out.print("Informe sua altura: ");
+            altura = ler.nextFloat();
+            imc = peso / (altura * altura);
+
+            System.out.println("");
+            System.out.println("Resultado com If");
+            if (imc < 18.5) {
+                System.out.printf(nome + " seu IMC é: %.2f, e define Magreza.", imc);
+            } else if (imc <= 24.9) {
+                System.out.printf(nome + " seu IMC é: %.2f, e define Normal.", imc);
+            } else if (imc <= 30) {
+                System.out.printf(nome + " seu IMC é: %.2f, e define Sobrepeso.", imc);
+            } else {
+                System.out.printf(nome + " seu IMC é: %2.f, e define Obesidade.", imc);
+            }
+            System.out.println("");
+            System.out.println("Você deseja calcular o imc novamente?"
+                    + "\n(s) para continuar");
+            saida = leTexto();
+            s = saida.equalsIgnoreCase("s");
+            //Gabriel Lima
+            //ler.nextLine();
+        }//fim do while
+        System.out.println("Aplicação encerrada pelo usuário!");
     }
 
 }
